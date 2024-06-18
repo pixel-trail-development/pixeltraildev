@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,600;1,600&display=swap');
+
+// Header
+.button {
+  background-color: var(--background-color);
+}
+.pricing,
+.contact,
+.home,
+.about {
+  
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+  color: var(--color-dark);
+  &:hover,
+  &:active,
+  &.active,
+  &:focus {
+    transition: 0.5s;
+    color: var(--accent);
+  }
+}
+.logo-png {
+    height: 64px;
+    width: 64px;
+    margin-right: 5px;
+}
+.Nav {
+  color: var(--primary-text);
+  background-color: var(--clear);
+  display: flex;
+}
+
+
+

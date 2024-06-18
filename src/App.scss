@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
+:root {
+    --background-color: #87BCC0;
+    --color-dark: #0B132B;
+    --color-white: #FFFFFF;
+    --primary-text: #FFF8F0;
+    --accent: #EF8275;
+    --transparent: #0e0b1683;
+    --clear: #ffffff00;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 40px;
+  font-size: 50px;
+}
+  // Breakpoints
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+// Fade In Animation
+.animation {
+  -webkit-animation: fadein 2s; // Safari, Chrome and Opera > 12.1
+  -moz-animation: fadein 2s; // Firefox < 16
+  -ms-animation: fadein 2s; // Internet Explorer
+  -o-animation: fadein 2s; // Opera < 12.1
+  animation: fadein 2s;
+}
+// Scrollbar
+::-webkit-scrollbar {
+  width: 10px;
+}
+// Track
+::-webkit-scrollbar-track {
+  background-color: var(--background-color-dark);
+}
+// Handle
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb-color);
+}
+// Handle on hover
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover-color);
+}
