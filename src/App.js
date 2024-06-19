@@ -1,27 +1,28 @@
 import './App.scss';
 import { Route, Routes } from 'react-router-dom';
-import Header from './Components/Header/Header'
-import Home from './Components/Body/Home/Home.jsx'; 
-import Pricing from './Components/Body/Pricing/Pricing.jsx'; 
-import About from './Components/Body/About/About.jsx'; 
-import Contact from './Components/Body/Contact/Contact.jsx'; 
+import Header from './Components/Header/Header';
+import Home from './Components/Body/Home/Home.jsx';
+import Pricing from './Components/Body/Pricing/Pricing.jsx';
+import About from './Components/Body/About/About.jsx';
+import Contact from './Components/Body/Contact/Contact.jsx';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+
+const theme = createTheme();
 
 function App() {
     return (
-        
-        <>
-        <Header />
-        <Routes>
-          <Route path="/" exact component={Home} />
-          <Route path="/pricing" component={Pricing} />
-          <Route path="/about" component={About} />
-          <Route path="/contact" component={Contact} />
-          </Routes>
-        </>
-
-       
-    )
-  
+        <ThemeProvider theme={theme}>
+            <CssBaseline />
+            <Header />
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/pricing" element={<Pricing />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
+            </Routes>
+        </ThemeProvider>
+    );
 }
 
 export default App;

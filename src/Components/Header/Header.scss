@@ -1,39 +1,68 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,600;1,600&display=swap');
 
 // Header
-.button {
+header {
   background-color: var(--background-color);
 }
-.pricing,
-.contact,
-.home,
-.about {
+.button {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-dark);
+  transition: box-shadow 0.5s, transform 0.2s;
   
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+  }
+
+  &:active {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+  }
+}
+.home {
   font-family: "Open Sans", sans-serif;
-  font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
-  color: var(--color-dark);
+  color: var(--primary-text);
   &:hover,
   &:active,
   &.active,
   &:focus {
     transition: 0.5s;
-    color: var(--accent);
+    color: var(--color-white);
   }
 }
-.logo-png {
-    height: 64px;
-    width: 64px;
-    margin-right: 5px;
+
+.pricing,
+.contact,
+.about {
+  padding-top: 11px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  color: var(--primary-text);
+  &:hover,
+  &:active,
+  &.active,
+  &:focus {
+    transition: 0.5s;
+    color: var(--color-white);
+  }
 }
 .Nav {
   color: var(--primary-text);
   background-color: var(--clear);
   display: flex;
+  justify-content: center;
 }
-
-
-
+.nav-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
