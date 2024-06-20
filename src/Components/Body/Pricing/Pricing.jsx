@@ -1,201 +1,106 @@
 import React from 'react';
-import { Container, Grid, Card, CardContent, Typography, Button, Box, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
+import {
+  Container,
+  Grid,
+  Card,
+  CardContent,
+  Typography,
+  Button,
+  Box,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText
+} from '@mui/material';
 import CheckIcon from '@mui/icons-material/Check';
 import ClearIcon from '@mui/icons-material/Clear';
 import './Pricing.scss';
+import pricingData from './Pricing.json';
+
+const CalendlyLink = () => {
+  window.open('https://calendly.com/ethanluxton-pixeltrail/web-dev-consult', '_blank');
+}
+
+const PricingCard = ({ title, description, price, monthly, features, isBasic }) => (
+  <Grid item xs={12} sm={6} md={4}>
+    <Card sx={{ backgroundColor: isBasic ? 'var(--color-white)' : (title === "Pixel Advanced" ? 'var(--accent)' : 'var(--color-dark)'), color: isBasic ? 'var(--color-dark)' : 'var(--primary-text)' }}>
+      <CardContent>
+        <Typography sx={{ color: isBasic ? 'var(--color-dark)' : 'var(--primary-text)' }} variant="h5" component="h2" gutterBottom>
+          {title}
+        </Typography>
+        <Typography variant="body1" sx={{ color: isBasic ? 'var(--color-dark)' : 'var(--primary-text)' }} gutterBottom>
+          {description}
+        </Typography>
+        <Box my={2}>
+          <Typography variant="h4" component="span" className="price">
+            {price}
+          </Typography>
+          <Typography variant="body2" component="span" sx={{ color: isBasic ? 'var(--color-dark)' : 'var(--primary-text)' }} display="block">
+            {monthly}
+          </Typography>
+        </Box>
+        <Button onClick={CalendlyLink} variant="contained" color="primary" fullWidth className="btn">
+          {title === "Pixel Basic" ? "Start Your Journey" : (title === "Pixel Advanced" ? "Establish Your Digital Legacy" : "Take Your Business Further")}
+        </Button>
+        <List>
+          {features.map((feature, index) => (
+            <ListItem key={index}>
+              <ListItemIcon>
+                {feature.includes("No backend support") ? <ClearIcon color="primary" /> : <CheckIcon color="primary" />}
+              </ListItemIcon>
+              <ListItemText sx={{ color: isBasic ? 'var(--color-dark)' : 'var(--primary-text)' }} primary={feature} />
+            </ListItem>
+          ))}
+        </List>
+      </CardContent>
+    </Card>
+  </Grid>
+);
+
+const CommonFeaturesCard = ({ features }) => (
+  <Grid item xs={12} sm={6} md={12}>
+    <Card sx={{ backgroundColor: 'var(--color-dark)', color: 'var(--primary-text)' }}>
+      <CardContent>
+        <Typography variant="h5" component="h2" gutterBottom>
+          All tiers
+        </Typography>
+        <List>
+          {features.map((feature, index) => (
+            <ListItem key={index}>
+              <ListItemIcon>
+                <CheckIcon color="primary" />
+              </ListItemIcon>
+              <ListItemText primary={feature} />
+            </ListItem>
+          ))}
+        </List>
+      </CardContent>
+    </Card>
+  </Grid>
+);
 
 const Pricing = () => {
+  const { plans, commonFeatures } = pricingData;
+
   return (
-    <body className='body'>
-    <Container className='pricing-container'>
-      <Box textAlign="center" mb={4}>
-        <Typography variant="h4" component="h1" gutterBottom className="pricing-title">
-          Get everything, forever.
-        </Typography>
-        <Typography variant="h6" component="p" color="textSecondary" className="pricing-subtitle">
-          Get lifetime access to 500+ components and every template available today, plus any new content we add in the future for a simple one-time price.
-        </Typography>
-      </Box>
-      
-      <Grid container spacing={3} justifyContent="center">
-        <Grid item xs={12} sm={6} md={4}>
-          <Card sx={{ backgroundColor: 'var(--color-white)', color: 'var(--color-dark)' }}>
-            <CardContent>
-              <Typography sx={{  color: 'var(--color-dark)' }} variant="h5" component="h2" gutterBottom>
-                Pixel Basic
-              </Typography>
-              <Typography variant="body1" sx={{  color: 'var(--color-dark)' }}  gutterBottom>
-                For individuals working on their next big project.
-              </Typography>
-              <Box my={2}>
-                <Typography variant="h4" component="span" className="price">
-                  $300
-                </Typography>
-                <Typography variant="body2" component="span" sx={{  color: 'var(--color-dark)' }}  display="block">
-                  +$5/mo
-                </Typography>
-              </Box>
-              <Button variant="contained" color="primary" fullWidth className="btn">
-                Start Your Journey
-              </Button>
-              <List>
-                <ListItem>
-                  <ListItemIcon>
-                    <CheckIcon color="primary" />
-                  </ListItemIcon>
-                  <ListItemText sx={{  color: 'var(--color-dark)' }} primary="Fully responsive, custom website and hosting" />
-                </ListItem>
-                
-                <ListItem>
-                  <ListItemIcon>
-                    <CheckIcon color="primary" />
-                  </ListItemIcon>
-                  <ListItemText sx={{  color: 'var(--color-dark)' }} primary="Ongoing updates and maintenance " />
-                </ListItem>
-                <ListItem>
-                  <ListItemIcon>
-                    <CheckIcon color="primary" />
-                  </ListItemIcon>
-                  <ListItemText sx={{  color: 'var(--color-dark)' }} primary="Full DNS support" />
-                </ListItem>
-                <ListItem>
-                  <ListItemIcon>
-                    <CheckIcon color="primary" />
-                  </ListItemIcon>
-                  <ListItemText sx={{  color: 'var(--color-dark)' }} primary="SSL Certificates" />
-                </ListItem>
-                <ListItem>
-                  <ListItemIcon>
-                    <CheckIcon color="primary" />
-                  </ListItemIcon>
-                  <ListItemText sx={{  color: 'var(--color-dark)' }} primary="SEO Optimization" />
-                </ListItem>
-                <ListItem>
-                  <ListItemIcon>
-                    <ClearIcon color="primary" />
-                  </ListItemIcon>
-                  <ListItemText sx={{  color: 'var(--color-dark)' }} primary="No domain included" />
-                </ListItem>
-                <ListItem>
-                  <ListItemIcon>
-                    <ClearIcon color="primary" />
-                  </ListItemIcon>
-                  <ListItemText sx={{  color: 'var(--color-dark)' }} primary="No backend support" />
-                </ListItem>
-              </List>
-            </CardContent>
-          </Card>
+    <div className='body'>
+      <Container className='pricing-container'>
+        <Box textAlign="center" mb={4}>
+          <Typography variant="h4" component="h1" gutterBottom className="pricing-title">
+            Lets start building your dreams.
+          </Typography>
+          <Typography variant="h6" component="p" color="textSecondary" className="pricing-subtitle">
+          </Typography>
+        </Box>
+
+        <Grid container spacing={3} justifyContent="center">
+          {plans.map((plan, index) => (
+            <PricingCard key={index} {...plan} />
+          ))}
+          <CommonFeaturesCard features={commonFeatures} />
         </Grid>
-        <Grid item xs={12} sm={6} md={4}>
-          <Card sx={{ backgroundColor: 'var(--accent)', color: 'var(--color-white)' }}>
-            <CardContent>
-              <Typography sx={{color: 'var(--primary-text)'}} variant="h5" component="h2" gutterBottom>
-                Pixel Advanced
-              </Typography>
-              <Typography sx={{color: 'var(--primary-text)'}} variant="body1" color="textSecondary" gutterBottom>
-                For small businesses crafting their digital footprint.
-              </Typography>
-              <Box my={2}>
-                <Typography sx={{color: 'var(--primary-text)'}} variant="h4" component="span" className="price">
-                  $600
-                </Typography>
-                <Typography sx={{color: 'var(--primary-text)'}} variant="body2" component="span" color="textSecondary" display="block">
-                  +$10/mo
-                </Typography>
-              </Box>
-              <Button variant="contained" color="primary" fullWidth className="btn">
-                Establish Your Digital Legacy
-              </Button>
-              <List>
-                <ListItem>
-                  <ListItemText sx={{color: 'var(--primary-text)'}} primary="Everything in Pixel Basic, plus:" />
-                </ListItem>
-                <ListItem>
-                  <ListItemIcon>
-                    <CheckIcon color="primary" />
-                  </ListItemIcon>
-                  <ListItemText sx={{color: 'var(--primary-text)'}} primary="Domain included ($50/yr max)" />
-                </ListItem>
-                <ListItem>
-                  <ListItemIcon>
-                    <CheckIcon color="primary" />
-                  </ListItemIcon>
-                  <ListItemText sx={{color: 'var(--primary-text)'}} primary="Limited backend support" />
-                </ListItem>
-                <ListItem>
-                  <ListItemIcon>
-                    <CheckIcon color="primary" />
-                  </ListItemIcon>
-                  <ListItemText sx={{color: 'var(--primary-text)'}} primary="Custom email initial setup" />
-                </ListItem>
-              </List>
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item xs={12} sm={6} md={4}>
-          <Card sx={{ backgroundColor: 'var(--color-dark)', color: 'var(--primary-text)' }}>
-            <CardContent>
-              <Typography variant="h5" component="h2" gutterBottom>
-                Pixel Premium
-              </Typography>
-              <Typography variant="body1" color="--primary-text" gutterBottom>
-                For established businesses wanting to scale their digital presence.
-              </Typography>
-              <Box my={2}>
-                <Typography variant="h4" component="span" className="price">
-                  $1,200
-                </Typography>
-                <Typography variant="body2" component="span" sx={{color: 'var(--primary-text)'}} display="block">
-                  +$15/mo
-                </Typography>
-  
-              </Box>
-              <Button variant="contained" color="primary" fullWidth className="btn">
-                Take Your Business Further
-              </Button>
-              <List>
-                <ListItem>
-                  
-                  <ListItemText primary="Everything in Pixel Advanced, plus:" />
-                </ListItem>
-                <ListItem>
-                  <ListItemIcon>
-                    <CheckIcon color="primary" />
-                  </ListItemIcon>
-                  <ListItemText primary="Domain included ($75/yr max)" />
-                </ListItem>
-                <ListItem>
-                  <ListItemIcon>
-                    <CheckIcon color="primary" />
-                  </ListItemIcon>
-                  <ListItemText primary="Full backend support" />
-                </ListItem>
-                <ListItem>
-                  <ListItemIcon>
-                    <CheckIcon color="primary" />
-                  </ListItemIcon>
-                  <ListItemText primary="Initial branding and tech consultation" />
-                </ListItem>
-                <ListItem>
-                  <ListItemIcon>
-                    <CheckIcon color="primary" />
-                  </ListItemIcon>
-                  <ListItemText primary="E-commerce Capabilities and content management" />
-                </ListItem>
-                <ListItem>
-                  <ListItemIcon>
-                    <CheckIcon color="primary" />
-                  </ListItemIcon>
-                  <ListItemText primary="Analytics Setup" />
-                </ListItem>
-                
-              </List>
-            </CardContent>
-          </Card>
-        </Grid>
-      </Grid>
-    </Container>
-    </body>
+      </Container>
+    </div>
   );
 };
 
