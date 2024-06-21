@@ -1,14 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
 
 :root {
-    --background-color: #87BCC0;
+
     --color-dark: #0B132B;
     --color-white: #FFFFFF;
     --primary-text: #FFF8F0;
-    --accent: #EF8275;
+    --accent: #FF5252;
+    --accent2: #2C3E50;
+    --accent3: #32A287;
     --transparent: #0e0b1683;
     --clear: #ffffff00;
-    background-color: var(--background-color);
+    background-color: var(--color-dark);
 }
 
 h1,

@@ -23,19 +23,19 @@ const CalendlyLink = () => {
 
 const PricingCard = ({ title, description, price, monthly, features, isBasic }) => (
   <Grid item xs={12} sm={6} md={4}>
-    <Card sx={{ backgroundColor: isBasic ? 'var(--color-white)' : (title === "Pixel Advanced" ? 'var(--accent)' : 'var(--color-dark)'), color: isBasic ? 'var(--color-dark)' : 'var(--primary-text)' }}>
+    <Card sx={{ backgroundColor: isBasic ? 'var(--accent3)' : (title === "Pixel Advanced" ? 'var(--accent)' : 'var(--accent2)'), color: 'var(--primary-text)' }}>
       <CardContent>
-        <Typography sx={{ color: isBasic ? 'var(--color-dark)' : 'var(--primary-text)' }} variant="h5" component="h2" gutterBottom>
+        <Typography sx={{ color: 'var(--primary-text)' }} variant="h5" component="h2" gutterBottom>
           {title}
         </Typography>
-        <Typography variant="body1" sx={{ color: isBasic ? 'var(--color-dark)' : 'var(--primary-text)' }} gutterBottom>
+        <Typography variant="body1" sx={{ color: 'var(--primary-text)' }} gutterBottom>
           {description}
         </Typography>
         <Box my={2}>
           <Typography variant="h4" component="span" className="price">
             {price}
           </Typography>
-          <Typography variant="body2" component="span" sx={{ color: isBasic ? 'var(--color-dark)' : 'var(--primary-text)' }} display="block">
+          <Typography variant="body2" component="span" sx={{ color: 'var(--primary-text)'}} display="block">
             {monthly}
           </Typography>
         </Box>
@@ -48,7 +48,7 @@ const PricingCard = ({ title, description, price, monthly, features, isBasic }) 
               <ListItemIcon>
                 {feature.includes("No backend support") ? <ClearIcon color="primary" /> : <CheckIcon color="primary" />}
               </ListItemIcon>
-              <ListItemText sx={{ color: isBasic ? 'var(--color-dark)' : 'var(--primary-text)' }} primary={feature} />
+              <ListItemText sx={{ color: 'var(--primary-text)' }} primary={feature} />
             </ListItem>
           ))}
         </List>
@@ -59,7 +59,7 @@ const PricingCard = ({ title, description, price, monthly, features, isBasic }) 
 
 const CommonFeaturesCard = ({ features }) => (
   <Grid item xs={12} sm={6} md={12}>
-    <Card sx={{ backgroundColor: 'var(--color-dark)', color: 'var(--primary-text)' }}>
+    <Card sx={{ backgroundColor: 'var(--accent2)', color: 'var(--primary-text)' }}>
       <CardContent>
         <Typography variant="h5" component="h2" gutterBottom>
           All tiers
