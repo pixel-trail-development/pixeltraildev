@@ -13,6 +13,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import data from './Home.json';
 import { Typewriter } from 'react-simple-typewriter'
 function Home() {
+  
   return (
     <div className="home-page">
       <Container maxWidth="lg" className="main-content">
