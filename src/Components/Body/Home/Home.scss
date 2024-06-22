@@ -26,7 +26,7 @@
   
     .actions {
       display: flex;
-      justify-content: left;
+      justify-content: center;
       margin-bottom: 3rem;
       
       .action-button {
@@ -41,8 +41,8 @@
     .templates-section {
       margin-top: 10px;
       color: var(--primary-text);
-      background-color: var(--accent3);
-      padding: 2rem;
+      
+      padding: 1rem;
       border-radius: 8px;
   
       .section-label {
@@ -71,16 +71,28 @@
     }
   
     .template-examples {
-      margin-top: 2rem;
+      margin-top: .2rem;
+      
+      .template-card {
+        background-color: var(--accent3);
+        color: var(--primary-text);
+        .category-container {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          
+          
+        }
+      }
     }
   
     .template-card {
       height: 100%;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
       border-radius: 2%;
-  
+      
       .category {
-        color: var(--accent);
+        color: var(--accent2);
       }
   
       .template-name {
@@ -88,7 +100,7 @@
       }
   
       .template-description {
-        color: var(--accent2);
+        color: var(--primary-text);
       }
     }
   
@@ -108,8 +120,28 @@
 }
 
 .pixel-trail {
-    width: 22rem;
-    height: 22rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
-    border-radius: 2%;
+  width: 100%;
+  height: auto;
+  max-width: 22rem; /* Ensure it doesn't get larger than 22rem */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+  border-radius: 2%;
+}
+
+@media (max-width: 600px) {
+  .pixel-trail {
+    width: 90%;
+    height: auto;
+  }
+}
+@media (max-width: 600px) {
+  .template-examples {
+    .template-card {
+      .category-container {
+        .arrow-icon {
+          display: block; // Show on mobile
+          transform: rotate(90deg); // Point down on mobile
+        }
+      }
+    }
+  }
 }

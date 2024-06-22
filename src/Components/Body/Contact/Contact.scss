@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.contact-form {
+    
+    
+    background-color: var(--accent2);
+    border-radius: none;
+    box-shadow: none;
+    
+}
+.textField {
+    background-color: var(--color-dark);
+    border-radius: .375rem;
+    font-family: 'Open Sans', sans-serif;
+    color: var(--primary-text) !important;
+}
+.contact-title {
+    color: var(--primary-text);
+    font-family: 'Open Sans', sans-serif;
+}
+.css-bhp9pd-MuiPaper-root-MuiCard-root {
+    box-shadow: none !important; 
+}
+.css-1jy569b-MuiFormLabel-root-MuiInputLabel-root,
+.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
+    color: var(--primary-text) !important;
+}
+.css-1sqnrkk-MuiInputBase-input-MuiOutlinedInput-input,
+.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input,
+.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+    color: var(--primary-text) !important;
+}
+
+.contact-submit {
+    background-color: var(--accent);
+    color: var(--primary-text);
+
+    &:hover {
+        background-color: var(--accent2);
+    }
+}
