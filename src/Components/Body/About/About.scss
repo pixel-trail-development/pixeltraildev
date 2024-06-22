@@ -1,0 +1,89 @@
+.about-page {
+    background-color: var(--color-dark);
+    .main-content {
+      padding: 40px 0;
+      .desc-container {
+        display: flex;
+        justify-content: center;
+        margin-left: 1rem;
+        margin-right: 1rem;
+      }
+    }
+  
+    .about-section {
+      margin-bottom: 40px;
+      
+      .desc-container {
+        margin-bottom: 20px;
+        
+        .headline {
+            font-size: 2.5rem;
+            font-weight: bold;  
+            color: var(--primary-text);
+            
+        }
+  
+        .section-description {
+          font-size: 1.2rem;
+          line-height: 1.6;
+          color: var(--primary-text);
+          max-width:700px;
+        }
+      }
+  
+      
+    }
+  
+    .team-section {
+      .headline {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: var(--primary-text);
+        text-align: center;
+        margin-left: 1rem;
+        margin-right: 1rem;
+      }
+  
+      .team-members {
+        
+        display: flex;
+        justify-content: center;
+  
+        .team-card {
+            margin-left: 1rem;
+            margin-right: 1rem;
+            background-color: var(--accent3);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+            border-radius: 8px;
+  
+            .team-name {
+                font-size: 1.5rem;
+                font-weight: bold;
+                color: var(--primary-text);
+            }
+  
+            .team-role {
+                font-size: 1.2rem;
+                font-weight: 600;
+                color: var(--primary-text);
+            }
+  
+            .team-description {
+                font-size: 1rem;
+                color: var(--primary-text);
+            }
+        }
+      }
+    }
+  }
+.grid-container {
+    display: flex;
+    justify-content: center;
+    .headshot {
+        width: 20rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+        border-radius: 8px;
+    }
+}
+

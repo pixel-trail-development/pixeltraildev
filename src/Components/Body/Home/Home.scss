@@ -14,6 +14,7 @@
       margin-bottom: 1.5rem;
       line-height: 1.2;
       text-align: left;
+      
     }
   
     .description {
@@ -34,7 +35,12 @@
         text-transform: uppercase;
         font-weight: bold;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
-        border-radius: 7%;
+        
+        
+        background-color: var(--accent3);
+        &:hover {
+          background-color: var(--accent);
+        }
       }
     }
   
@@ -42,7 +48,7 @@
       margin-top: 10px;
       color: var(--primary-text);
       
-      padding: 1rem;
+      padding: .5rem;
       border-radius: 8px;
   
       .section-label {
@@ -72,7 +78,7 @@
   
     .template-examples {
       margin-top: .2rem;
-      
+      padding: .5rem;
       .template-card {
         background-color: var(--accent3);
         color: var(--primary-text);
@@ -80,7 +86,9 @@
           display: flex;
           align-items: center;
           justify-content: space-between;
-          
+          .arrow-icon {
+            color: var(--accent);
+          }
           
         }
       }
@@ -92,11 +100,12 @@
       border-radius: 2%;
       
       .category {
-        color: var(--accent2);
+        color: var(--primary-text);
       }
   
       .template-name {
         margin-bottom: 0.5rem;
+        
       }
   
       .template-description {
@@ -120,17 +129,24 @@
 }
 
 .pixel-trail {
-  width: 100%;
+  
   height: auto;
   max-width: 22rem; /* Ensure it doesn't get larger than 22rem */
+  max-height: 22rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
   border-radius: 2%;
 }
-
-@media (max-width: 600px) {
+.pixel-highlight {
+  background-color: #FF5252;
+  color: white; // For better contrast
+  
+  border-radius: 2px;
+  display: inline-block;
+}
+@media (max-width:600px) {
   .pixel-trail {
     width: 90%;
-    height: auto;
+    height: 90%;
   }
 }
 @media (max-width: 600px) {
@@ -140,6 +156,7 @@
         .arrow-icon {
           display: block; // Show on mobile
           transform: rotate(90deg); // Point down on mobile
+          color: var(--accent);
         }
       }
     }

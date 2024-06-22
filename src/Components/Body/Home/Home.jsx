@@ -12,7 +12,13 @@ import './Home.scss';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import data from './Home.json';
 import { Typewriter } from 'react-simple-typewriter'
+import { useNavigate } from 'react-router-dom';
 function Home() {
+  const navigate = useNavigate();
+
+  const handleButtonClick = (path) => {
+    navigate(path);
+  };
   return (
     <div className="home-page">
       <Container maxWidth="lg" className="main-content">
@@ -30,18 +36,31 @@ function Home() {
                 </Typography>
               </div>
               <div className='desc-container'>
-                <Typography variant="body1" className="section-description">
-                  {data.sectionDescription.split('\n').map((line, index) => (
-                    <React.Fragment key={index}>
-                      {line}
-                      <br />
-                    </React.Fragment>
-                  ))}
-                </Typography>
+              <Typography variant="body1" className="section-description">
+                {data.sectionDescription.split('\n').map((line, index) => (
+                  <React.Fragment key={index}>
+                    {line.includes("pixel-by-pixel.") ? (
+                      <>
+                        {line.split("pixel-by-pixel.")[0]}
+                        <span className="pixel-highlight">pixel-by-pixel.</span>
+                        {line.split("pixel-by-pixel.")[1]}
+                      </>
+                    ) : (
+                      line
+                    )}
+                    <br />
+                  </React.Fragment>
+                ))}
+              </Typography>
               </div>
               <div className="actions">
                 {data.buttons.map((button, index) => (
-                  <Button key={index} onClick={() => window.open(button.link)} variant="contained" className="action-button">
+                  <Button 
+                    key={index} 
+                    onClick={() => handleButtonClick(button.link)} 
+                    variant="contained" 
+                    className="action-button"
+                  >
                     {button.text}
                   </Button>
                 ))}

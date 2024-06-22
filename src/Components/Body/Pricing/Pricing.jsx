@@ -100,7 +100,7 @@ const Pricing = () => {
       <Container className='pricing-container'>
         <Box textAlign="center" mb={4}>
           <Typography variant="h4" component="h1" gutterBottom className="pricing-title">
-            Let's start building your dreams.
+            Let's start building your dream website.
           </Typography>
           <Typography variant="h6" component="p" color="textSecondary" className="pricing-subtitle">
           </Typography>
@@ -113,45 +113,31 @@ const Pricing = () => {
           <CommonFeaturesCard features={commonFeatures} />
         </Grid>
         <Modal
-  open={open}
-  onClose={handleClose}
-  closeAfterTransition
-  BackdropComponent={Backdrop}
-  BackdropProps={{
-    timeout: 500,
-  }}
->
-  <Fade in={open}>
-    <Box sx={{
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      
-      padding: '10px'
-    }}>
-      <Card sx={{
-        width: '90%',
-        maxWidth: '600px',
-        
-        
-        position: 'relative',
-        backgroundColor: 'var(--accent2)',
-        overflow: 'auto'
-      }}>
-        <IconButton
-          aria-label="close"
-          onClick={handleClose}
-          sx={{ position: 'absolute', right: 8, top: 8 }}
+          open={open}
+          onClose={handleClose}
+          closeAfterTransition
+          BackdropComponent={Backdrop}
+          BackdropProps={{
+            timeout: 500,
+          }}
         >
-          <CloseIcon sx={{ color: 'var(--color-white)' }} />
-        </IconButton>
-        <Box sx={{ padding: '16px', overflowY: 'auto', maxHeight: 'calc(100vh - 64px)' }}>
-          <ContactPricing product={selectedProduct} />
-        </Box>
-      </Card>
-    </Box>
-  </Fade>
-</Modal>
+          <Fade in={open}>
+            <Box className='modal-box'>
+              <Card className='modal-card'>
+                <IconButton
+                  aria-label="close"
+                  onClick={handleClose}
+                  className='modal-icon-button'
+                  >
+                  <CloseIcon className='modal-icon-close'/>
+                </IconButton>
+                <Box className='modal-box-2'>
+                  <ContactPricing product={selectedProduct} />
+                </Box>
+              </Card>
+            </Box>
+          </Fade>
+        </Modal>
       </Container>
     </div>
   );
