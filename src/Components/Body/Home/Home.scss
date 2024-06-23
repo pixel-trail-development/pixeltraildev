@@ -80,7 +80,7 @@
       margin-top: .2rem;
       padding: .5rem;
       .template-card {
-        background-color: var(--accent3);
+        background-color: var(--accent3) !important;
         color: var(--primary-text);
         .category-container {
           display: flex;

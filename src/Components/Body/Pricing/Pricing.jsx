@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Container,
   Grid,
@@ -11,19 +11,15 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
-  Modal,
-  IconButton,
-  Fade,
-  Backdrop
 } from '@mui/material';
+import { Link } from 'react-router-dom'; // Assuming you are using React Router
+
 import CheckIcon from '@mui/icons-material/Check';
 import ClearIcon from '@mui/icons-material/Clear';
-import CloseIcon from '@mui/icons-material/Close';
 import './Pricing.scss';
 import pricingData from './Pricing.json';
-import ContactPricing from '../Contact/ContactPricing.jsx';
 
-const PricingCard = ({ title, description, price, monthly, features, isBasic, onContactClick }) => (
+const PricingCard = ({ title, description, price, monthly, features, isBasic }) => (
   <Grid item xs={12} sm={6} md={4}>
     <Card sx={{ backgroundColor: isBasic ? 'var(--accent3)' : (title === "Pixel Advanced" ? 'var(--accent)' : 'var(--accent2)'), color: 'var(--primary-text)' }}>
       <CardContent>
@@ -41,7 +37,7 @@ const PricingCard = ({ title, description, price, monthly, features, isBasic, on
             {monthly}
           </Typography>
         </Box>
-        <Button onClick={() => onContactClick(title)} variant="contained" color="primary" fullWidth className="btn">
+        <Button component={Link} to={`/contact`} variant="contained" color="primary" fullWidth className="btn">
           {title === "Pixel Basic" ? "Start Your Journey" : (title === "Pixel Advanced" ? "Establish Your Digital Legacy" : "Take Your Business Further")}
         </Button>
         <List>
@@ -83,17 +79,6 @@ const CommonFeaturesCard = ({ features }) => (
 
 const Pricing = () => {
   const { plans, commonFeatures } = pricingData;
-  const [open, setOpen] = useState(false);
-  const [selectedProduct, setSelectedProduct] = useState('');
-
-  const handleOpen = (product) => {
-    setSelectedProduct(product);
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
 
   return (
     <div className='body'>
@@ -108,36 +93,10 @@ const Pricing = () => {
 
         <Grid container spacing={3} justifyContent="center">
           {plans.map((plan, index) => (
-            <PricingCard key={index} {...plan} onContactClick={handleOpen} />
+            <PricingCard key={index} {...plan} />
           ))}
           <CommonFeaturesCard features={commonFeatures} />
         </Grid>
-        <Modal
-          open={open}
-          onClose={handleClose}
-          closeAfterTransition
-          BackdropComponent={Backdrop}
-          BackdropProps={{
-            timeout: 500,
-          }}
-        >
-          <Fade in={open}>
-            <Box className='modal-box'>
-              <Card className='modal-card'>
-                <IconButton
-                  aria-label="close"
-                  onClick={handleClose}
-                  className='modal-icon-button'
-                  >
-                  <CloseIcon className='modal-icon-close'/>
-                </IconButton>
-                <Box className='modal-box-2'>
-                  <ContactPricing product={selectedProduct} />
-                </Box>
-              </Card>
-            </Box>
-          </Fade>
-        </Modal>
       </Container>
     </div>
   );

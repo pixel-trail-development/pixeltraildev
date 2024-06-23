@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+
+.footer {
+    background-color: var(--color-dark);
+    .footer-text {
+        font-family: 'Open Sans', sans-serif;
+        color: var(--primary-text);
+        margin-bottom: .5rem;
+    }
+}

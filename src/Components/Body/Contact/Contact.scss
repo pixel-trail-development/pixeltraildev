@@ -2,44 +2,87 @@
 
 body {
     font-family: 'Open Sans', sans-serif;
+    
+}
+
+.form-page, .css-bhp9pd-MuiPaper-root-MuiCard-root {
+    background-color: var(--color-dark) !important;
 }
 
 .contact-form {
-    
-    
-    background-color: var(--accent2);
-    border-radius: none;
-    box-shadow: none;
-    
-}
-.textField {
     background-color: var(--color-dark);
-    border-radius: .375rem;
-    font-family: 'Open Sans', sans-serif;
-    color: var(--primary-text) !important;
+    border-radius: 0;
+    box-shadow: none !important;
+    padding: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
 }
-.contact-title {
-    color: var(--primary-text);
-    font-family: 'Open Sans', sans-serif;
-}
-.css-bhp9pd-MuiPaper-root-MuiCard-root {
-    box-shadow: none !important; 
-}
-.css-1jy569b-MuiFormLabel-root-MuiInputLabel-root,
-.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
-    color: var(--primary-text) !important;
-}
-.css-1sqnrkk-MuiInputBase-input-MuiOutlinedInput-input,
-.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input,
-.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
-    color: var(--primary-text) !important;
+.contact-page{
+    box-shadow: none !important;
+    background-color: var(--color-dark);
 }
 
-.contact-submit {
+.form-group {
+    margin: 1rem 0;
+    box-shadow: none !important;
+    background-color: var(--color-dark);
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--primary-text);
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    
+}
+
+.textField {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 0.25rem;
+    background-color: var(--color-white);
+    border: 2px solid var(--accent3);
+    border-radius: 0.375rem;
+    font-family: 'Open Sans', sans-serif;
+    color: var(--color-dark);
+    box-shadow: none;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+
+    &:focus {
+        outline: none;
+        border-color: var(--accent);
+    }
+}
+
+textarea.textField {
+    resize: vertical;
+    
+}
+
+.submitButton {
+    padding: 0.75rem 1.5rem;
     background-color: var(--accent);
     color: var(--primary-text);
-
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    box-shadow: none;
     &:hover {
         background-color: var(--accent2);
     }
+}
+
+.contact-title {
+    color: var(--primary-text);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1.5rem;
 }
