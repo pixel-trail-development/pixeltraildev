@@ -8,21 +8,22 @@ const initializeGA = (trackingID) => {
 
 // Track page view
 const trackPage = (page) => {
-  ReactGA.set({ page });
-  ReactGA.pageview(page);
+  ReactGA.send({ hitType: 'pageview', page });
 };
 
 // Track event
-const trackEvent = (category, action, label) => {
+const trackEvent = (category, action, label, value, nonInteraction, transport) => {
   ReactGA.event({
     category,
     action,
     label,
+    value,
+    nonInteraction,
+    transport,
   });
 };
 
-
-const ReactGAComponent = ({ trackingID, location, events}) => {
+const ReactGAComponent = ({ trackingID, location, events }) => {
   useEffect(() => {
     if (!trackingID) {
       console.warn('Tracking ID is required for Google Analytics');
@@ -33,7 +34,14 @@ const ReactGAComponent = ({ trackingID, location, events}) => {
 
     if (events) {
       events.forEach((event) => {
-        trackEvent(event.category, event.action, event.label);
+        trackEvent(
+          event.category,
+          event.action,
+          event.label,
+          event.value,
+          event.nonInteraction,
+          event.transport
+        );
       });
     }
   }, [trackingID, location, events]);
