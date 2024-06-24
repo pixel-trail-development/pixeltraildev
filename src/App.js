@@ -6,6 +6,7 @@ import Pricing from './Components/Body/Pricing/Pricing.jsx';
 import About from './Components/Body/About/About.jsx';
 import Footer from './Components/Footer/Footer.jsx'
 import ContactPricing from './Components/Body/Contact/ContactPricing.jsx';
+import { SubConfirm } from './Components/Body/Contact/SubConfirm.jsx';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
@@ -20,8 +21,8 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/pricing" element={<Pricing />} />
                 <Route path="/about" element={<About />} />
-                <Route path="/contact" element={<ContactPricing />} />
-            
+                <Route path="/contact" element={<ContactPricing />} />        
+                <Route path="/contact-confirmed" element={<SubConfirm />} />
             </Routes>
             <Footer/>
         </ThemeProvider>

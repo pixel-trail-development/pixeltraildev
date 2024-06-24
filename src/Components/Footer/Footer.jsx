@@ -1,5 +1,4 @@
 import React from 'react';
-import './Footer.scss'
 import { Typography, Link } from '@mui/material';
 
 

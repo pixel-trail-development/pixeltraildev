@@ -7,10 +7,14 @@ import {
     Typography
 } from '@mui/material';
 import emailjs from '@emailjs/browser';
-import './Contact.scss';
-
+import { useLocation } from 'react-router-dom';
+import SEO from '../../SEO.jsx';
+import ReactGAComponent from '../../../ReactGA.jsx';
 const ContactPricing = ({ product }) => {
-    
+    const location = useLocation();
+    const events = [
+        { category: 'User', action: 'View', label: 'Contact' },
+      ];
     const SendEmail = (e) => {
         e.preventDefault();
 
@@ -39,6 +43,21 @@ const ContactPricing = ({ product }) => {
     };
 
     return (
+        <>
+        <ReactGAComponent
+        trackingID={process.env.REACT_APP_GA_TOKEN}
+        location={location}
+        events={events}
+        
+        />
+        <SEO 
+            title="Contact - Pixel Trail Development, LLC"
+            description="At Pixel Trail Development, our mission is to empower professionals and businesses with visually stunning, high-performance websites."
+            keywords="Pixel, Trail, Development, LLC, Ethan Luxton, React, Netlify, AWS"
+            author="Ethan Luxton"
+            imageUrl="../../../Assets/PixelTrail.png"
+            pageUrl="https://pixeltrail.io/contact"
+        />
         <div className='contact-page'>
         <Container className='form-page'>
             <Grid container justifyContent="center" >
@@ -110,17 +129,22 @@ const ContactPricing = ({ product }) => {
                                 <div className="form-group">
                                     <label htmlFor="website_type">Type of Website</label>
                                     <select id="website_type" name="website_type" required className="textField">
+                                        <option value="pls-select">Please select...</option>
                                         <option value="blog">Blog</option>
                                         <option value="portfolio">Portfolio</option>
-                                        <option value="other_business">Other Business</option>
+                                        
                                         <option value="e-commerce">E-commerce</option>
                                         <option value="restaurant">Restaurant</option>
+                                        <option value="other_business">Other Business</option>
+                                        <option value="other_business">Other Professional</option>
+                                        <option value="other_business">Other Personal</option>
                                     </select>
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="website_type">Service you are interested in</label>
                         
                                     <select id="user_product" name="user_product" required className="textField">
+                                        <option value="pls-select">Please select...</option>
                                         <option value="pixel-basic">Pixel Basic</option>
                                         <option value="pixel-advanced">Pixel Advanced</option>
                                         <option value="pixel-premium">Pixel Premium</option>
@@ -139,6 +163,7 @@ const ContactPricing = ({ product }) => {
             </Grid>
         </Container>
         </div>
+        </>
     );
 }
 

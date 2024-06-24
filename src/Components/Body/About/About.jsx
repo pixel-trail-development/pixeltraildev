@@ -11,15 +11,14 @@ import {
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Headshot from '../../../Assets/ethanluxton.jpg';
-import './About.scss';
-import aboutData from './About.json';
-
+import data from '../../data.json';
+import SEO from '../../SEO.jsx';
 function About() {
   const [aboutContent, setAboutContent] = useState({});
   const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
-    setAboutContent(aboutData);
+    setAboutContent(data);
   }, []);
 
   const handleChange = (panel) => (event, isExpanded) => {
@@ -29,6 +28,15 @@ function About() {
   if (!aboutContent.aboutSection) return null;
 
   return (
+    <>
+    <SEO 
+      title="About - Pixel Trail Development, LLC"
+      description="At Pixel Trail Development, our mission is to empower professionals and businesses with visually stunning, high-performance websites."
+      keywords="Pixel, Trail, Development, LLC, Ethan Luxton, React, Netlify, AWS"
+      author="Ethan Luxton"
+      imageUrl="../../../Assets/PixelTrail.png"
+      pageUrl="https://pixeltrail.io/about"
+    />
     <div className="about-page">
       <Container maxWidth="lg" className="main-content">
         <Grid container spacing={4}>
@@ -104,6 +112,7 @@ function About() {
         </section>
       </Container>
     </div>
+    </>
   );
 }
 
