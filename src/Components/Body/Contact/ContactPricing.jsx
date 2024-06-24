@@ -7,17 +7,19 @@ import {
     Typography
 } from '@mui/material';
 import emailjs from '@emailjs/browser';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import SEO from '../../SEO.jsx';
 import ReactGAComponent from '../../../ReactGA.jsx';
+
 const ContactPricing = ({ product }) => {
     const location = useLocation();
     const events = [
         { category: 'User', action: 'View', label: 'Contact' },
       ];
+    const navigate = useNavigate();
     const SendEmail = (e) => {
         e.preventDefault();
-
+        
         // Check the form data
         const formData = new FormData(e.target);
         for (let [key, value] of formData.entries()) {
@@ -35,6 +37,7 @@ const ContactPricing = ({ product }) => {
             () => {
               console.log('Form data:', formData);
               console.log('SUCCESS!');
+              navigate("/contact-confirmed")
             },
             (error) => {
               console.log('FAILED...', error);
