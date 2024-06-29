@@ -648,8 +648,23 @@
         color: var(--primary-text);
         margin-bottom: .5rem;
     }
+  
 }
-
+.notPageContainer {
+  background-color: var(--color-dark);
+}
+.notFoundContainer {
+  
+  text-align: center;
+  
+  background-color: var(--color-dark);
+  .notFoundH {
+    color: var(--primary-text);
+  }
+  .notFoundP {
+    color: var(--primary-text);
+  }
+}
 }
 
 h1,
