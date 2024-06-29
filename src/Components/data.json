@@ -84,8 +84,8 @@
         {
           "title": "Pixel Basic",
           "description": "For individuals working on their next big project.",
-          "price": "$300",
-          "monthly": "+$5/mo",
+          "price": "$500",
+          "monthly": "+$10/mo",
           "features": [
             "Fully responsive, custom website and hosting",
             "Ongoing updates and maintenance",
@@ -100,11 +100,11 @@
         {
           "title": "Pixel Advanced",
           "description": "For small businesses crafting their digital footprint.",
-          "price": "$600",
-          "monthly": "+$10/mo",
+          "price": "$1000",
+          "monthly": "+$15/mo",
           "features": [
             "Everything in Pixel Basic, plus:",
-            "Domain included ($50/yr max)",
+            "Domain included ($75/yr max)",
             "Limited backend support",
             "Custom email initial setup",
             "Priority support"
@@ -114,11 +114,11 @@
         {
           "title": "Pixel Premium",
           "description": "For established businesses wanting to scale their digital presence.",
-          "price": "$1,200",
-          "monthly": "+$15/mo",
+          "price": "$1,500",
+          "monthly": "+$20/mo",
           "features": [
             "Everything in Pixel Advanced, plus:",
-            "Domain included ($75/yr max)",
+            "Domain included ($100/yr max)",
             "Full backend support",
             "Initial branding and tech consultation",
             "E-Commerce Capabilities",
