@@ -11,7 +11,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import SEO from '../../SEO.jsx';
 import ReactGAComponent from '../../../ReactGA.jsx';
 
-const ContactPricing = ({ product }) => {
+const ContactPricing = () => {
     const location = useLocation();
     const events = [
         { category: 'User', action: 'View', label: 'Contact' },

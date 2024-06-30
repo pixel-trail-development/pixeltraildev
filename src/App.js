@@ -9,10 +9,11 @@ import ContactPricing from './Components/Body/Contact/ContactPricing.jsx';
 import { SubConfirm } from './Components/Body/Contact/SubConfirm.jsx';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-
+import { NotFound } from './Components/Errors/NotFound.jsx';
 const theme = createTheme();
 
 function App() {
+
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline />
@@ -23,6 +24,10 @@ function App() {
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<ContactPricing />} />        
                 <Route path="/contact-confirmed" element={<SubConfirm />} />
+                <Route path="*" element={<NotFound/>} />
+    
+
+                
             </Routes>
             <Footer/>
         </ThemeProvider>
