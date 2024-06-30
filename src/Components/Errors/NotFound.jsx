@@ -1,14 +1,16 @@
 import React from 'react';
-import { Container } from '@mui/material'
+import { Container } from '@mui/material';
+
 export const NotFound = () => {
   return (
     <Container className='notPageContainer'>
-        <div className='notFoundContainer'>
+      <div className='notFoundContainer'>
         <h1 className='notFoundH'>404 - Page Not Found</h1>
-        <p className='notFoundP'>The page you are looking for does not exist.</p>
-        </div>
+        <p className='notFoundP'>
+          The page you are looking for does not exist, yet.
+        </p>
+        
+      </div>
     </Container>
   );
 };
-
-
