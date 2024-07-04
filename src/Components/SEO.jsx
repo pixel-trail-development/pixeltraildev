@@ -28,6 +28,7 @@ const SEO =({
       <link rel="canonical" href={pageUrl}/>
       <link rel="apple-touch-icon" href="path/to/apple-touch-icon.png"/>
       <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+      
     </Helmet>
   );
 }

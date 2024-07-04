@@ -33,9 +33,11 @@ function Home() {
   return (
     <>
       <ReactGAComponent
+        clarityID={process.env.REACT_APP_CLARITY_TOKEN}
         trackingID={process.env.REACT_APP_GA_TOKEN}
         location={location}
         events={events}
+        
       />
       <SEO 
         title="Home - Pixel Trail Development, LLC"
