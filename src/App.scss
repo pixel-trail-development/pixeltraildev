@@ -24,6 +24,38 @@
       display: flex;
       text-align: center;
     }    
+    //Cookie Consent
+
+    
+    .consent-banner {
+      .MuiSnackbarContent-root {
+        background-color: var(--accent2);
+        color: var(--primary-text);
+        font-family: 'Open Sans', sans-serif;
+        width: auto; /* Adjust width as needed */
+      }
+    
+      .MuiButton-root {
+        font-family: 'Open Sans', sans-serif;
+        background-color: var(--accent);
+        margin-left: .5rem;
+        &:hover {
+          background-color: var(--accent3);
+        }
+      }
+    
+      .MuiButton-textPrimary {
+        color: var(--primary-color);
+      }
+    
+      .MuiButton-textSecondary {
+        color: var(--secondary-color);
+      }
+    }
+    
+    
+      
+    
     // Pricing Component
     .pricing-container {
       text-align: center;
@@ -144,7 +176,7 @@
       color: var(--color-dark);
       border: none;
       border-radius: 5px;
-      font-size: 1rem;
+      
       cursor: pointer;
       text-align: center; // Center align text
       text-decoration: none; // Remove underline
