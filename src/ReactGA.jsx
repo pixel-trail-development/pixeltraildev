@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState} from 'react';
 import ReactGA from 'react-ga4';
 import { clarity } from 'react-microsoft-clarity';
 import ConsentPopup from './CookieConsent.jsx'; 
