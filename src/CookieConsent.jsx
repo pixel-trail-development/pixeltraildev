@@ -3,7 +3,7 @@ import { Snackbar, SnackbarContent, Button } from '@mui/material';
 
 const ConsentPopup = ({ onConsent }) => {
   const [open, setOpen] = useState(false);
-  // This is a test from new OS
+  
 
   useEffect(() => {
     const consentGiven = localStorage.getItem('consentGiven');
