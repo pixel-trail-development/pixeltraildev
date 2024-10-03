@@ -18,7 +18,7 @@
       "faqs": [
         {
           "question": "What services do you offer?",
-          "answer": "We offer full service web development and hosting using technologies like React, Netlify, and AWS, tailored to your unique needs. The primary benefit for your project or business is that the websites are extremely customizable and not bound by the norms that modern website building tools put in place."
+          "answer": "We offer full service web development and hosting using technologies like React, Netlify, and AWS, tailored to your unique needs. We additionally offer full-service consulting on current web and software implementations for businesses and individual projects."
         },
         {
           "question": "Do you build websites on Wordpress, Squarespace or WIX?",
@@ -26,11 +26,11 @@
         },
         {
           "question": "Can I bring my own domain?",
-          "answer": "Yes! You can bring your own domain, our Advanced and Premium tiers include domains up to $75/yr and $100/yr respectively. But your own domain is always welcome."
+          "answer": "Yes! You can bring your own domain. We will assist with migrating the domain to our provider to host the site."
         },
         {
           "question": "Do you give any discounts?",
-          "answer": "If you are a veteran or have a documented disability, you are eligible for a 15% discount on our services. All that is required is a copy of your VA card or documentation of your disability. The discount will be applied from day one and will apply to every monthly charge thereafter. Discounts are also given on a case-by-case basis at the sole discretion of the company."
+          "answer": "Veterans, individuals with disabilities and non-profit foundations qualify for a 20% discount on initial and any ongoing fees. Verification is required. Subject to changes at the discretion of Pixel Trail Development, LLC."
         },
         {
           "question": "Do you provide any services outside of Washington State",
@@ -78,60 +78,37 @@
     "pricingSection": {
       "plans": [
         {
-          "title": "Pixel Basic",
-          "description": "For individuals working on their next big project.",
+          "title": "Pixel Consultation",
+          "description": "For businesses and individuals looking to enhance their digital presence",
           "price": "$500",
-          "monthly": "+$10/mo",
           "features": [
-            "Fully responsive, custom website and hosting",
-            "Ongoing updates and maintenance",
-            "Full Domain (DNS) support",
-            "SSL Certificates (HTTPS)",
-            "Search Engine Optimization",
-            "Domain not included",
-            "No backend support"
+            "Full-service web consulting package and presentation",
+            "Ongoing recommendations and support on a pro-rata basis",
+            "Backend and Frontend recommendations"
           ],
           "isBasic": true
         },
         {
-          "title": "Pixel Advanced",
-          "description": "For small businesses crafting their digital footprint.",
-          "price": "$1,000",
-          "monthly": "+$15/mo",
-          "features": [
-            "Everything in Pixel Basic, plus:",
-            "Domain included ($75/yr max)",
-            "Limited backend support",
-            "Custom email initial setup",
-            "Priority support"
-          ],
-          "isBasic": false
-        },
-        {
-          "title": "Pixel Premium",
-          "description": "For established businesses wanting to scale their digital presence.",
+          "title": "Pixel Total Web Package",
+          "description": "For those wanting to establish a new business, build a hobby or strengthen their online presence",
           "price": "Quote",
-          "monthly": "+$20/mo",
           "features": [
-            "Everything in Pixel Advanced, plus:",
-            "Domain included ($100/yr max)",
-            "Full backend support",
-            "Initial branding and tech consultation",
-            "E-Commerce Capabilities",
-            "Analytics Setup through Google and Microsoft"
+            "Bring your domain or setup a new domain",
+            "Full Backend and Frontend support",
+            "Access to consultation services",
+            "Third-party provider and API integrations",
+            "Websites and backends built from the ground up, highly customizable and fully serviced"
           ],
           "isBasic": false
         }
       ],
       "commonFeatures": [
-        "From initial consultation to website deployment within three weeks for all sites.",
-        "Full service hosting and development.",
-        "Email and phone support.",
-        "Initial 60-minute meeting to discuss website needs and customization for all tiers.",
-        "Regular backups.",
-        "On request updates to content, shops, information color schemes and typography.",
-        "Regular security checks and patching.",
-        "Veterans and clients with disabilities qualify for a 15% discount on the initial and ongoing fees. Verification is required."
+      
+        "Initial 60-minute meeting to discuss your business or individual needs, completely free and no obligations required.",
+        "The Pixel Total Web Package includes on-request updates to content, shops, information color schemes and typography.",
+        "Regular security checks and patching for all available integrations.",
+        "Encrypted data storage on a on-site server.",
+        "Veterans, individuals with disabilities and non-profit foundations qualify for a 20% discount on initial and any ongoing fees. Verification is required. Subject to changes at the discretion of Pixel Trail Development, LLC."
       ]
     }
   }
