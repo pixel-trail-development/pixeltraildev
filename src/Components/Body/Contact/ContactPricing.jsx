@@ -149,9 +149,9 @@ const ContactPricing = () => {
                         
                                     <select id="user_product" name="user_product" required className="textField">
                                         <option value="pls-select">Please select...</option>
-                                        <option value="pixel-basic">Pixel Basic</option>
-                                        <option value="pixel-advanced">Pixel Advanced</option>
-                                        <option value="pixel-premium">Pixel Premium</option>
+                                        <option value="pixel-basic">Pixel Consultation</option>
+                                        <option value="pixel-advanced">Pixel Total Web Package</option>
+                                       
                     
                                     </select>
                                 </div>

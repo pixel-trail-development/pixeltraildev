@@ -15,13 +15,12 @@ import {
 import { Link, useLocation } from 'react-router-dom';
 import SEO from '../../SEO.jsx';
 import CheckIcon from '@mui/icons-material/Check';
-import ClearIcon from '@mui/icons-material/Clear';
 import data from '../../data.json';
 import ReactGAComponent from '../../../ReactGA.jsx';
 
 const PricingCard = ({ title, description, price, monthly, features, isBasic }) => (
   <Grid item xs={12} sm={6} md={4}>
-    <Card sx={{ backgroundColor: isBasic ? 'var(--accent3)' : (title === "Pixel Advanced" ? 'var(--accent)' : 'var(--accent2)'), color: 'var(--primary-text)' }}>
+    <Card sx={{ backgroundColor: isBasic ? 'var(--accent3)' : (title === "Pixel Total Web Package" ? 'var(--accent)' : 'var(--accent2)'), color: 'var(--primary-text)' }}>
       <CardContent>
         <Typography sx={{ color: 'var(--primary-text)' }} variant="h5" component="h2" gutterBottom>
           {title}
@@ -46,13 +45,13 @@ const PricingCard = ({ title, description, price, monthly, features, isBasic }) 
           className="btn-pricing"
           fullWidth
         >
-          {title === "Pixel Basic" ? "Start Your Journey" : (title === "Pixel Advanced" ? "Establish Your Digital Legacy" : "Take Your Business Further")}
+          {title === "Pixel Consultation" ? "Start Your Journey" : (title === "Pixel Total Web Package" ? "Establish Your Digital Legacy" : "Take Your Business Further")}
         </Button>
         <List>
           {features.map((feature, index) => (
             <ListItem key={index}>
               <ListItemIcon>
-                {feature.includes("No backend support") || feature.includes("Domain not included") ? <ClearIcon color="primary" /> : <CheckIcon color="primary" />}
+                <CheckIcon color="primary" />
               </ListItemIcon>
               <ListItemText sx={{ color: 'var(--primary-text)' }} primary={feature} />
             </ListItem>
