@@ -56,6 +56,7 @@
     ]
   },
   "devDependencies": {
+    "ajv": "^7.2.4",
     "react-router-dom": "^6.23.1"
   }
 }
