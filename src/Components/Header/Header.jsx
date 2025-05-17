@@ -27,22 +27,7 @@ const Header = () => {
                 Pixel Trail Development
               </Navbar.Brand>
               
-              <Nav.Link
-                onClick={() => { setExpanded(false); }}
-                as={Link}
-                to="/pricing"
-                className="pricing"
-              >
-                Pricing
-              </Nav.Link>
-              <Nav.Link
-                onClick={() => { setExpanded(false); }}
-                as={Link}
-                to="/about"
-                className="about"
-              >
-                About
-              </Nav.Link>
+              
               <Nav.Link
                 onClick={() => { setExpanded(false); }}
                 as={Link}
